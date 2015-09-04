@@ -1,8 +1,6 @@
 # IoGViewOverlay Sample
 
-v1.0
-(c) 2015 Infusions of Grandeur
-Written By: Eric Crichlow
+v1.0 / (c) 2015 Infusions of Grandeur / Written By: Eric Crichlow
 
 ## Background
 
@@ -44,36 +42,36 @@ Add the following 2 files to your project:
 
 Create the desired overlays and call “show” on each of them to have them added to the view of the designated controller:
 
-- (void)viewDidLoad
-{
+	- (void)viewDidLoad
+	{
 
-	[super viewDidLoad];
-
-	NSArray *categoryItems = @[@{@"item":@"Home and Leisure", @"target":self, @"selector":NSStringFromSelector(@selector(categorySelected:))}, @{@"item":@"Electronics", @"target":self, @"selector":NSStringFromSelector(@selector(categorySelected:))}, @{@"item":@"Sports", @"target":self, @"selector":NSStringFromSelector(@selector(categorySelected:))}];
-	NSArray *sectionItems = @[@{@"image":[UIImage imageNamed:@"HomeButton.png"], @"label":@"Home", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}, @{@"image":[UIImage imageNamed:@"LeisureButton.png"], @"label":@"Leisure", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}, @{@"image":[UIImage imageNamed:@"SportsButton.png"], @"label":@"Sports", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}, @{@"image":[UIImage imageNamed:@"GiftsButton.png"], @"label":@"Gifts", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}];
-
-	// Add View Overlays
-	self.accountTab = [[IoGViewOverlay alloc] initForParentViewController:self withPosition:IoGViewOverlayTabPositionLeftEdgeTop contentType:IoGViewOverlayTypeFreeForm andTitle:@"Account"];
-	self.accountTab.tabBackgroundColor = [UIColor blackColor];
-	self.accountTab.tabTitleColor = [UIColor whiteColor];
-	self.accountTab.contentBackgroundColor = [UIColor blueColor];
-	[self.accountTab show];
-	self.categoriesTab = [[IoGViewOverlay alloc] initForParentViewController:self withPosition:IoGViewOverlayTabPositionRightEdgeCenter contentType:IoGViewOverlayTypeList andTitle:@"Categories"];
-	self.categoriesTab.tabBackgroundColor = [UIColor blackColor];
-	self.categoriesTab.tabTitleColor = [UIColor whiteColor];
-	self.categoriesTab.contentBackgroundColor = [UIColor darkGrayColor];
-	self.categoriesTab.contentForegroundColor = [UIColor whiteColor];
-	[self.categoriesTab addItems:categoryItems];
-	[self.categoriesTab show];
-	self.sectionsTab = [[IoGViewOverlay alloc] initForParentViewController:self withPosition:IoGViewOverlayTabPositionLeftEdgeBottom contentType:IoGViewOverlayTypeGrid andTitle:@"Sections"];
-	self.sectionsTab.tabBackgroundColor = [UIColor blackColor];
-	self.sectionsTab.tabTitleColor = [UIColor whiteColor];
-	self.sectionsTab.contentBackgroundColor = [UIColor darkGrayColor];
-	self.sectionsTab.contentForegroundColor = [UIColor whiteColor];
-	self.sectionsTab.itemsPerRow = 3;
-	[self.sectionsTab addItems:sectionItems];
-	[self.sectionsTab show];
-}
+		[super viewDidLoad];
+	
+		NSArray *categoryItems = @[@{@"item":@"Home and Leisure", @"target":self, @"selector":NSStringFromSelector(@selector(categorySelected:))}, @{@"item":@"Electronics", @"target":self, @"selector":NSStringFromSelector(@selector(categorySelected:))}, @{@"item":@"Sports", @"target":self, @"selector":NSStringFromSelector(@selector(categorySelected:))}];
+		NSArray *sectionItems = @[@{@"image":[UIImage imageNamed:@"HomeButton.png"], @"label":@"Home", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}, @{@"image":[UIImage imageNamed:@"LeisureButton.png"], @"label":@"Leisure", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}, @{@"image":[UIImage imageNamed:@"SportsButton.png"], @"label":@"Sports", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}, @{@"image":[UIImage imageNamed:@"GiftsButton.png"], @"label":@"Gifts", @"target":self, @"selector":NSStringFromSelector(@selector(sectionSelected:))}];
+	
+		// Add View Overlays
+		self.accountTab = [[IoGViewOverlay alloc] initForParentViewController:self withPosition:IoGViewOverlayTabPositionLeftEdgeTop contentType:IoGViewOverlayTypeFreeForm andTitle:@"Account"];
+		self.accountTab.tabBackgroundColor = [UIColor blackColor];
+		self.accountTab.tabTitleColor = [UIColor whiteColor];
+		self.accountTab.contentBackgroundColor = [UIColor blueColor];
+		[self.accountTab show];
+		self.categoriesTab = [[IoGViewOverlay alloc] initForParentViewController:self withPosition:IoGViewOverlayTabPositionRightEdgeCenter contentType:IoGViewOverlayTypeList andTitle:@"Categories"];
+		self.categoriesTab.tabBackgroundColor = [UIColor blackColor];
+		self.categoriesTab.tabTitleColor = [UIColor whiteColor];
+		self.categoriesTab.contentBackgroundColor = [UIColor darkGrayColor];
+		self.categoriesTab.contentForegroundColor = [UIColor whiteColor];
+		[self.categoriesTab addItems:categoryItems];
+		[self.categoriesTab show];
+		self.sectionsTab = [[IoGViewOverlay alloc] initForParentViewController:self withPosition:IoGViewOverlayTabPositionLeftEdgeBottom contentType:IoGViewOverlayTypeGrid andTitle:@"Sections"];
+		self.sectionsTab.tabBackgroundColor = [UIColor blackColor];
+		self.sectionsTab.tabTitleColor = [UIColor whiteColor];
+		self.sectionsTab.contentBackgroundColor = [UIColor darkGrayColor];
+		self.sectionsTab.contentForegroundColor = [UIColor whiteColor];
+		self.sectionsTab.itemsPerRow = 3;
+		[self.sectionsTab addItems:sectionItems];
+		[self.sectionsTab show];
+	}
 
 Three types of overlays are available:
 
