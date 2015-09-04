@@ -1,0 +1,195 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red46\green13\blue110;\red92\green38\blue153;
+\red28\green0\blue207;\red196\green26\blue22;\red0\green116\blue0;\red63\green110\blue116;\red38\green71\blue75;
+}
+\margl1440\margr1440\vieww20280\viewh12100\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\f0\fs48 \cf0 IoGViewOverlay Sample\
+v1.0\
+(c) 2015 Infusions of Grandeur\
+Written By: Eric Crichlow\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+
+\b\fs36 Background\
+
+\fs28 \
+\pard\tx0\tx680\tx680\tx680\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li680\fi20\pardirnatural
+
+\b0 \cf0 IoGViewOverlay Sample is a sample app created as a showcase and tutorial for the IoGViewOverlay class, which is designed to add supplemental display features to standard views.\
+\
+The project was born out of a desire to have functionality similar to what many apps currently do, with having a secondary view controller slide over from the primary view controller, but in a more lightweight, (no secondary view controller needed,) and flexible, (multiple \'93sliders\'94 can be available simultaneously,) manner.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\fi700\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li680\fi20\pardirnatural
+\cf0 The class gives developers the ability to add \'93tabs\'94, not to be confused with CoCoa Touch native tab bar tabs, to a view. These tabs, when selected, slide over the current view, almost entirely covering it, and exposing a supplemental view onto which the developer can add any native components.\
+\
+Three types of supplemental views are supported: list view, which is implemented via a standard table view, grid view, which is implemented via a standard collection view, and freeform, which utilities a plain UIView.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\fi700\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs36 \cf0 History\
+
+\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\fi700\pardirnatural
+
+\b0 \cf0 Version 1.0 :	Initial release\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs36 \cf0 Classes\
+
+\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i\b0 \cf0 	
+\i0 IoGViewOverlay
+\i \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i0 \cf0 \
+\pard\tx720\tx1440\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li740\fi720\pardirnatural
+\cf0 This is the subclass of UIView that is instantiated for the desired view controller.\
+It contains 9 properties of interest to the developer:\
+\pard\tx720\tx1440\tx1440\tx2140\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2120\fi-660\pardirnatural
+
+\i \cf0 position - 
+\i0 location along the edge of the view to display the tab while its content is hidden. \
+
+\i contentType - 
+\i0 which of the 3 possible overlay types the tab will utilize\
+
+\i tabTitle - 
+\i0 the name displayed on the tab selection \'93button\'94\
+\pard\tx1440\tx1440\tx2140\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2120\fi-660\pardirnatural
+
+\i \cf0 contentView - 
+\i0 the containing view for the content to be displayed in the overlay\
+\pard\tx720\tx1440\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li2180\fi-720\pardirnatural
+
+\i \cf0 tabBackgroundColor - 
+\i0 color for the background of the tab selection \'93button\'94\
+
+\i tabTitleColor
+\i0  - color for the text of the tab selection \'93button\'94\
+
+\i contentBackgroundColor
+\i0  - color for the background of the content area of the overlay\
+
+\i contentForegroundColor
+\i0  - color for textual items in the content area of the overlay\
+
+\i itemsPerRow
+\i0  - the number of items to place in each row when using the grid content type\
+\pard\tx720\tx1440\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li740\fi-740\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs36 \cf0 Usage\
+
+\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural
+\cf0 	
+\b0 Add the following 2 files to your project:\
+\
+		IoGViewOverlay.h\
+		IoGViewOverlay.m\
+
+\b \
+	
+\b0 Create the desired overlays and call \'93show\'94 on each of them to have them added to the view of the designated controller:\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 - (\cf2 void\cf0 )viewDidLoad\
+\{\
+\
+	[\cf2 super\cf0  \cf3 viewDidLoad\cf0 ];\
+\
+	\cf4 NSArray\cf0 							*categoryItems = \cf5 @[@\{\cf6 @"item"\cf0 :\cf6 @"Home and Leisure"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (categorySelected:))\cf5 \}\cf0 , \cf5 @\{\cf6 @"item"\cf0 :\cf6 @"Electronics"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (categorySelected:))\cf5 \}\cf0 , \cf5 @\{\cf6 @"item"\cf0 :\cf6 @"Sports"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (categorySelected:))\cf5 \}]\cf0 ;\
+	\cf4 NSArray\cf0 							*sectionItems = \cf5 @[@\{\cf6 @"image"\cf0 :[\cf4 UIImage\cf0  \cf3 imageNamed\cf0 :\cf6 @"HomeButton.png"\cf0 ], \cf6 @"label"\cf0 :\cf6 @"Home"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (sectionSelected:))\cf5 \}\cf0 , \cf5 @\{\cf6 @"image"\cf0 :[\cf4 UIImage\cf0  \cf3 imageNamed\cf0 :\cf6 @"LeisureButton.png"\cf0 ], \cf6 @"label"\cf0 :\cf6 @"Leisure"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (sectionSelected:))\cf5 \}\cf0 , \cf5 @\{\cf6 @"image"\cf0 :[\cf4 UIImage\cf0  \cf3 imageNamed\cf0 :\cf6 @"SportsButton.png"\cf0 ], \cf6 @"label"\cf0 :\cf6 @"Sports"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (sectionSelected:))\cf5 \}\cf0 , \cf5 @\{\cf6 @"image"\cf0 :[\cf4 UIImage\cf0  \cf3 imageNamed\cf0 :\cf6 @"GiftsButton.png"\cf0 ], \cf6 @"label"\cf0 :\cf6 @"Gifts"\cf0 , \cf6 @"target"\cf0 :\cf2 self\cf0 , \cf6 @"selector"\cf0 :\cf3 NSStringFromSelector\cf0 (\cf2 @selector\cf0 (sectionSelected:))\cf5 \}]\cf0 ;\
+\
+	\cf7 // Add View Overlays\cf0 \
+	\cf2 self\cf0 .\cf8 accountTab\cf0  = [[\cf8 IoGViewOverlay\cf0  \cf3 alloc\cf0 ] \cf9 initForParentViewController\cf0 :\cf2 self\cf0  \cf9 withPosition\cf0 :\cf9 IoGViewOverlayTabPositionLeftEdgeTop\cf0  \cf9 contentType\cf0 :\cf9 IoGViewOverlayTypeFreeForm\cf0  \cf9 andTitle\cf0 :\cf6 @"Account"\cf0 ];\
+	\cf2 self\cf0 .\cf8 accountTab\cf0 .\cf8 tabBackgroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 blackColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 accountTab\cf0 .\cf8 tabTitleColor\cf0  = [\cf4 UIColor\cf0  \cf3 whiteColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 accountTab\cf0 .\cf8 contentBackgroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 blueColor\cf0 ];\
+	[\cf2 self\cf0 .\cf8 accountTab\cf0  \cf9 show\cf0 ];\
+	\cf2 self\cf0 .\cf8 categoriesTab\cf0  = [[\cf8 IoGViewOverlay\cf0  \cf3 alloc\cf0 ] \cf9 initForParentViewController\cf0 :\cf2 self\cf0  \cf9 withPosition\cf0 :\cf9 IoGViewOverlayTabPositionRightEdgeCenter\cf0  \cf9 contentType\cf0 :\cf9 IoGViewOverlayTypeList\cf0  \cf9 andTitle\cf0 :\cf6 @"Categories"\cf0 ];\
+	\cf2 self\cf0 .\cf8 categoriesTab\cf0 .\cf8 tabBackgroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 blackColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 categoriesTab\cf0 .\cf8 tabTitleColor\cf0  = [\cf4 UIColor\cf0  \cf3 whiteColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 categoriesTab\cf0 .\cf8 contentBackgroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 darkGrayColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 categoriesTab\cf0 .\cf8 contentForegroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 whiteColor\cf0 ];\
+	[\cf2 self\cf0 .\cf8 categoriesTab\cf0  \cf9 addItems\cf0 :categoryItems];\
+	[\cf2 self\cf0 .\cf8 categoriesTab\cf0  \cf9 show\cf0 ];\
+	\cf2 self\cf0 .\cf8 sectionsTab\cf0  = [[\cf8 IoGViewOverlay\cf0  \cf3 alloc\cf0 ] \cf9 initForParentViewController\cf0 :\cf2 self\cf0  \cf9 withPosition\cf0 :\cf9 IoGViewOverlayTabPositionLeftEdgeBottom\cf0  \cf9 contentType\cf0 :\cf9 IoGViewOverlayTypeGrid\cf0  \cf9 andTitle\cf0 :\cf6 @"Sections"\cf0 ];\
+	\cf2 self\cf0 .\cf8 sectionsTab\cf0 .\cf8 tabBackgroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 blackColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 sectionsTab\cf0 .\cf8 tabTitleColor\cf0  = [\cf4 UIColor\cf0  \cf3 whiteColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 sectionsTab\cf0 .\cf8 contentBackgroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 darkGrayColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 sectionsTab\cf0 .\cf8 contentForegroundColor\cf0  = [\cf4 UIColor\cf0  \cf3 whiteColor\cf0 ];\
+	\cf2 self\cf0 .\cf8 sectionsTab\cf0 .\cf8 itemsPerRow\cf0  = \cf5 3\cf0 ;\
+	[\cf2 self\cf0 .\cf8 sectionsTab\cf0  \cf9 addItems\cf0 :sectionItems];\
+	[\cf2 self\cf0 .\cf8 sectionsTab\cf0  \cf9 show\cf0 ];\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural
+
+\f0\fs28 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural
+
+\b \cf0 	
+\b0 Three types of overlays are available:\
+\
+		IogViewOverlayTypeList: utilizes the standard tableview to present a list\
+		IogViewOverlayTypeGrid: utilizes the standard collection view to present a grid of items\
+		IogViewOverlayTypeFreeForm: allows the developer a \'93blank slate\'94 upon which to create a display\
+\
+	For list and grid types, you must create an array containing the items to be displayed and add the array to the overlay object. You should also define a target object and selector to call on that object as a callback for when each item is selected.
+\b \
+\pard\tx560\pardeftab560\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 Known Issues\
+
+\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural
+\cf0 	
+\b0 The tabs and content views don\'92t currently adapt to device rotation.\
+\
+	Changes to tab properties are not respected after the tab has been displayed.\
+
+\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 Support\
+
+\fs28 \
+\pard\pardeftab720\li740\fi-20
+
+\b0 \cf0 Questions, suggestions or contributions to the codebase can be submitted to support@infusionsofgrandeur.com\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs36 \cf0 License\
+
+\fs28 \
+\pard\pardeftab720\li740\fi-20
+
+\b0 \cf0 Copyright 2015 Infusions of Grandeur\
+\
+Licensed under the Apache License, Version 2.0 (the "License");\
+you may not use this file except in compliance with the License.\
+You may obtain a copy of the License at\
+\
+http://www.apache.org/licenses/LICENSE-2.0\
+\
+Unless required by applicable law or agreed to in writing, software\
+distributed under the License is distributed on an "AS IS" BASIS,\
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\
+See the License for the specific language governing permissions and\
+limitations under the License.\
+\
+}
